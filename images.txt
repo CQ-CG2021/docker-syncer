@@ -3,6 +3,6 @@ docker.io/zefhemel/silverbullet:latest
 openlistteam/openlist:latest
 easytier/easytier:latest
 mysql:latest
-gitea:latest
-jenkins:latest
-nexus3:latest
+gitea/gitea:latest
+jenkins/jenkins:latest
+sonatype/nexus3:latest
