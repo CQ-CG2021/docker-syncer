@@ -251,6 +251,8 @@ jobs:
                SRC_DIGEST=$(echo "$SRC_INFO" | cut -d'|' -f1)
                SRC_CREATED=$(echo "$SRC_INFO" | cut -d'|' -f2)
                
+               echo "   源信息: $SRC_DIGEST ($SRC_CREATED)"
+               
                if [ -z "$SRC_DIGEST" ]; then
                    echo "⚠️ 无法获取源镜像信息，跳过。"
                    continue
