@@ -140,6 +140,10 @@ jobs:
             
             # Use regex to extract platform value anywhere in string
             PLATFORM_VAL=""
+            # 默认架构参数供 Skopeo 使用
+            SKOPEO_OS="linux"
+            SKOPEO_ARCH="amd64"
+            
             if [[ "$line" =~ --platform[=\ ]([^ ]+) ]]; then
                  PLATFORM_VAL="${BASH_REMATCH[1]}"
             fi
