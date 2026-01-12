@@ -33,6 +33,7 @@ jobs:
         id: config
         run: |
           # 读取 config.env (如果存在)
+          echo "当前目录: $(pwd)"
           if [ -f "config.env" ]; then
             echo "111111"
              source config.env
@@ -114,6 +115,7 @@ jobs:
             done
           }
 
+          echo "当前目录: $(pwd)"
           if [ ! -s "images.txt" ]; then
             echo "⚠️ images.txt 不存在或为空。"
             exit 0
