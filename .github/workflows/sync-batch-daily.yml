@@ -34,10 +34,12 @@ jobs:
         run: |
           # 读取 config.env (如果存在)
           if [ -f "config.env" ]; then
+            echo "111111"
              source config.env
              echo "CLEAN_DISK_SPACE=${CLEAN_DISK_SPACE}" >> $GITHUB_OUTPUT
              echo "SYNC_MODE=${SYNC_MODE}" >> $GITHUB_ENV
           else
+            echo "222222"
              echo "CLEAN_DISK_SPACE=true" >> $GITHUB_OUTPUT
              echo "SYNC_MODE=none" >> $GITHUB_ENV
           fi
