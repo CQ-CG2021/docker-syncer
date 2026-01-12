@@ -248,6 +248,7 @@ jobs:
                
                # 源信息
                SRC_INFO=$(retry skopeo inspect $SKOPEO_FLAGS "docker://$SRC_IMAGE" --format='{{.Digest}}|{{.Created}}' 2>/dev/null || echo "")
+echo SRC_INFO
                SRC_DIGEST=$(echo "$SRC_INFO" | cut -d'|' -f1)
                SRC_CREATED=$(echo "$SRC_INFO" | cut -d'|' -f2)
                
