@@ -29,7 +29,8 @@ jobs:
       contents: write
       packages: write
     steps:
-    
+
+      # 这一步移动到这里，读取配置
       - name: Checkout Code
         uses: actions/checkout@v3
         
@@ -37,8 +38,6 @@ jobs:
         id: config
         run: |
           # 读取 config.env (如果存在)
-          echo "当前目录: $(pwd)"
-          echo "当前目录: $(ls)"
           if [ -f "config.env" ]; then
             echo "111111"
              source config.env
@@ -71,10 +70,6 @@ jobs:
         run: sudo service docker restart
 
       # Secrets check moved to previous step
-
-
-      #- name: Checkout Code
-       # uses: actions/checkout@v3
 
       - name: 登录阿里云 ACR
         uses: docker/login-action@v2
@@ -120,8 +115,6 @@ jobs:
             done
           }
 
-          echo "当前目录: $(pwd)"
-          echo "当前目录: $(ls)"
           if [ ! -s "images.txt" ]; then
             echo "⚠️ images.txt 不存在或为空。"
             exit 0
